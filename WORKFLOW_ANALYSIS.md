@@ -30,6 +30,8 @@ The environment configuration tells GitHub Actions that the website will be depl
 
 Automated deployment improves reliability by making the process more consistent and reducing the likelihood of human error. Instead of manually uploading files every time changes are made, GitHub Actions automatically runs checks and prepares the website for deployment. The workflow validates HTML and checks links before publishing. The HTML validation must succeed, while the link-checking step is configured to allow the workflow to continue even if it fails. Overall, this saves time and helps developers catch problems before updating the live website.
 
+Another benefit of automated deployment is that every update follows the same process. This makes it easier for developers to identify problems and understand why a deployment failed. It also allows team members to spend more time improving the website instead of manually managing updates.
+
 6. What would happen if you pushed code to a different branch (not main)?
 
 If I pushed code directly to a different branch, the workflow would not automatically run because its push trigger is configured for the main branch. However, if I created a pull request from that branch into main, the workflow would run the build-and-test job to check the changes. The website would not be deployed from that pull request. Deployment would only happen after the changes were merged or otherwise pushed to the main branch and the required build-and-test job succeeded.
